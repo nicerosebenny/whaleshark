@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:whaleshark/login.dart';
-import 'package:whaleshark/report.dart';
-=======
 import 'package:whaleshark/register.dart';
->>>>>>> d9f04be332de0ac45efade973bfa5eb627acb8e5
 
 void main() {
   runApp(const MyApp());
@@ -30,11 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-<<<<<<< HEAD
       home: Login(),
-=======
-      home: const MyHomePage(title:"helo "),
->>>>>>> d9f04be332de0ac45efade973bfa5eb627acb8e5
     );
   }
 }
