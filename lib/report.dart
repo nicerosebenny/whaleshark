@@ -10,6 +10,13 @@ class Report extends StatefulWidget {
 }
 
 class _ReportState extends State<Report> {
+  bool? check = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +42,42 @@ class _ReportState extends State<Report> {
         body: Container(
           child: Column(
             children: [
-              Image.asset("C:\Users\NICE\OneDrive\Documents\whaleshark\whaleshark-1\lib\assets\download.png"),
+              Row(
+                children: [
+                  Center(
+                      child: InkWell(
+                    child: Image.asset("assets/download.png"),
+                    onTap: () {
+                      setState(() {
+                        check == false
+                            ? check = true
+                            : check == true
+                                ? check = false
+                                : false;
+                      });
+                    },
+                  )),
+                  Center(
+                      child: InkWell(
+                    child: Image.asset("assets/download.png"),
+                    onTap: () {
+                      setState(() {
+                        check == false
+                            ? check = true
+                            : check == true
+                                ? check = false
+                                : false;
+                      });
+                    },
+                  )),
+                ],
+              ),
+              check == false
+                  ? SizedBox.shrink()
+                  : Container(
+                      height: 40,
+                      color: Colors.red,
+                    )
             ],
           ),
         ));
