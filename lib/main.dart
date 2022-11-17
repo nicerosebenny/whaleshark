@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:whaleshark/login.dart';
 import 'package:whaleshark/report.dart';
+=======
+import 'package:whaleshark/register.dart';
+>>>>>>> d9f04be332de0ac45efade973bfa5eb627acb8e5
 
 void main() {
   runApp(const MyApp());
@@ -26,22 +30,17 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Report(),
+<<<<<<< HEAD
+      home: Login(),
+=======
+      home: const MyHomePage(title:"helo "),
+>>>>>>> d9f04be332de0ac45efade973bfa5eb627acb8e5
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
