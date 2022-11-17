@@ -12,12 +12,13 @@ class Register extends StatefulWidget {
 enum user { female, male, other }
 
 class _RegisterState extends State<Register> {
-  user _gender = user.female;
+  user? _gender = user.female;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.lightBlue.shade200,
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.lightBlue,
           title: Text("Registration"),
         ),
         body: Column(
@@ -29,7 +30,7 @@ class _RegisterState extends State<Register> {
               child: Column(
                 children: [
                   TextField(
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       labelText: ("Name:"),
                       enabledBorder: OutlineInputBorder(
@@ -38,8 +39,9 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 15),
                   TextField(
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       labelText: ("Phone Number:"),
                       enabledBorder: OutlineInputBorder(
@@ -48,8 +50,9 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 15),
                   TextField(
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       labelText: ("E-mail id:"),
                       enabledBorder: OutlineInputBorder(
@@ -58,8 +61,9 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 15),
                   TextField(
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       labelText: ("Address:"),
                       enabledBorder: OutlineInputBorder(
@@ -68,8 +72,9 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 15),
                   TextField(
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       labelText: ("Date Of Birth:"),
                       enabledBorder: OutlineInputBorder(
@@ -78,13 +83,22 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-
-
-
-
-                  
+                  ListTile(
+                    tileColor: Colors.lightBlue,
+                    title: const Text("Female"),
+                    leading: Radio(
+                      value: user.female,
+                      groupValue: _gender,
+                      onChanged: (value) {
+                        setState(() {
+                          // _gender = value;
+                        });
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 15),
                   TextField(
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       labelText: ("Enter password:"),
                       enabledBorder: OutlineInputBorder(
