@@ -35,7 +35,7 @@ class _ReportState extends State<Report> {
         body: Container(
           child: Column(
             children: [
-              //Image.asset(),
+              Image.asset("C:\Users\NICE\OneDrive\Documents\whaleshark\whaleshark-1\lib\assets\download.png"),
             ],
           ),
         ));
