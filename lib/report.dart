@@ -63,7 +63,7 @@ class _ReportState extends State<Report> {
                   )),
                   Center(
                       child: InkWell(
-                    child: Image.asset("assets/clownfish.jpg",width: 200,height: 100,),
+                    child: Image.asset("assets/clownfish-r.jpg",width: 200,height: 100,),
                     onTap: () {
                       setState(() {
                         check == false
