@@ -48,6 +48,10 @@ class _ReportState extends State<Report> {
                       child: InkWell(
                     child: Image.asset("assets/download.png"),
                     onTap: () {
+                      Text(
+                        "In net",
+                        style: TextStyle(color: Colors.black),
+                      );
                       setState(() {
                         check == false
                             ? check = true
