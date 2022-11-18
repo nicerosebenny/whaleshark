@@ -24,7 +24,7 @@ class _RegisterState extends State<Register> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 15),
+            SizedBox(height: 5),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: Column(
@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 5),
                   TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -50,7 +50,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 5),
                   TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -61,7 +61,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 5),
                   TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -72,7 +72,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 5),
                   TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -88,6 +88,32 @@ class _RegisterState extends State<Register> {
                     title: const Text("Female"),
                     leading: Radio(
                       value: user.female,
+                      groupValue: _gender,
+                      onChanged: (value) {
+                        setState(() {
+                          // _gender = value;
+                        });
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    tileColor: Colors.lightBlue,
+                    title: const Text("Male"),
+                    leading: Radio(
+                      value: user.male,
+                      groupValue: _gender,
+                      onChanged: (value) {
+                        setState(() {
+                          // _gender = value;
+                        });
+                      },
+                    ),
+                  ),
+                  ListTile(
+                    tileColor: Colors.lightBlue,
+                    title: const Text("Others"),
+                    leading: Radio(
+                      value: user.other,
                       groupValue: _gender,
                       onChanged: (value) {
                         setState(() {
