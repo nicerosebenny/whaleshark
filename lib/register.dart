@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -9,9 +8,11 @@ class Register extends StatefulWidget {
   State<Register> createState() => _RegisterState();
 }
 
+// ignore: camel_case_types
 enum user { female, male, other }
 
 class _RegisterState extends State<Register> {
+  // ignore: prefer_final_fields
   user? _gender = user.female;
   @override
   Widget build(BuildContext context) {
@@ -19,19 +20,17 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.lightBlue.shade200,
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
-          title: Text("Registration"),
+          title: const Text("Registration"),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: Scrollbar(
-                thumbVisibility: false,
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: Column(
                 children: [
-                  TextField(
+                  const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       filled:true,
@@ -43,8 +42,8 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5),
-                  TextField(
+                  const SizedBox(height: 5),
+                  const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       filled:true,
@@ -56,8 +55,8 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5),
-                  TextField(
+                  const SizedBox(height: 5),
+                  const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       filled:true,
@@ -69,8 +68,8 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5),
-                  TextField(
+                  const SizedBox(height: 5),
+                  const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       filled:true,
@@ -82,8 +81,8 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5),
-                  TextField(
+                  const SizedBox(height: 5),
+                  const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       filled:true,
@@ -171,7 +170,7 @@ class _RegisterState extends State<Register> {
                 ],
               ),
             ),
-            ),
+            
           ],
         ),
         );
