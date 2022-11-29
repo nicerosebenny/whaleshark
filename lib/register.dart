@@ -30,6 +30,7 @@ class _RegisterState extends State<Register> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: Column(
                 children: [
+                  
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
