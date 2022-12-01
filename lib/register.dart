@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Register extends StatefulWidget {
   const Register({super.key});
 
@@ -17,12 +16,13 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue.shade200,
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
-          title: const Text("Registration"),
-        ),
-        body: Column(
+      // backgroundColor: Colors.lightBlue.shade200,
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlue,
+        title: const Text("Registration"),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 5),
@@ -30,11 +30,10 @@ class _RegisterState extends State<Register> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: Column(
                 children: [
-                  
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      filled:true,
+                      filled: true,
                       fillColor: Colors.white,
                       labelText: ("Name:"),
                       enabledBorder: OutlineInputBorder(
@@ -47,7 +46,7 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      filled:true,
+                      filled: true,
                       fillColor: Colors.white,
                       labelText: ("Phone Number:"),
                       enabledBorder: OutlineInputBorder(
@@ -60,7 +59,7 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      filled:true,
+                      filled: true,
                       fillColor: Colors.white,
                       labelText: ("E-mail id:"),
                       enabledBorder: OutlineInputBorder(
@@ -73,7 +72,7 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      filled:true,
+                      filled: true,
                       fillColor: Colors.white,
                       labelText: ("Address:"),
                       enabledBorder: OutlineInputBorder(
@@ -86,7 +85,7 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      filled:true,
+                      filled: true,
                       fillColor: Colors.white,
                       labelText: ("Date Of Birth:"),
                       enabledBorder: OutlineInputBorder(
@@ -99,53 +98,105 @@ class _RegisterState extends State<Register> {
                     height: 5,
                   ),
                   Row(
-                  children:[Text("Choose Gender:",style: TextStyle(fontSize: 16),),
-                  ListTile(
-                    tileColor: Colors.white,
-                    title: const Text("Female"),
-                    leading: Radio(
-                      value: user.female,
-                      groupValue: _gender,
-                      onChanged: (user? value) {
-                        setState(() {
-                          _gender = value;
-                        });
-                      },
+                    children: [
+                      Text(
+                        "Choose Gender:",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Container(
+                        height: 10,
+                        child:Radio<user>(
+                             value: user.female,
+                             groupValue: _gender,
+                             onChanged: (user? value){
+                              setState(() {
+                                _gender=value;
+                              });
+                             },
+                        ),
+                      ),
+                      Container(
+                        height: 10,
+                        child:Radio<user>(
+                             value: user.male,
+                             groupValue: _gender,
+                             onChanged: (user? value){
+                              setState(() {
+                                _gender=value;
+                              });
+                             },
+                        ),
+                      ),
+                      Container(
+                        height: 10,
+                        child:Radio<user>(
+                             value: user.other,
+                             groupValue: _gender,
+                             onChanged: (user? value){
+                              setState(() {
+                                _gender=value;
+                              });
+                             },
+                        ),
+                      ),
+                    ],
                     ),
-                  ),
-                  ListTile(
-                    tileColor: Colors.white,
-                    title: const Text("Male"),
-                    leading: Radio(
-                      value: user.male,
-                      groupValue: _gender,
-                      onChanged: (user? value) {
-                        setState(() {
-                          _gender = value;
-                        });
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    tileColor: Colors.white,
-                    title: const Text("Others"),
-                    leading: Radio(
-                      value: user.other,
-                      groupValue: _gender,
-                      onChanged: (user? value) {
-                        setState(() {
-                          _gender = value;
-                        });
-                      },
-                    ),
-                  ),
-                  ],
-                  ),
+                       
+
+                  //       child: RadioListTile<user>(
+                  //         tileColor: Colors.white,
+                  //         title: const Text("Female"),
+                          
+                  //           value: user.female,
+                  //           groupValue: _gender,
+                  //           onChanged: (user? value) {
+                  //             setState(() {
+                  //               _gender = value;
+                  //             });
+                  //           },
+                          
+                  //       ),
+                  //     ),
+                  //     Container(
+                  //       height: 10,
+                  //       child: RadioListTile<user>(
+                  //         tileColor: Colors.white,
+                  //         title: const Text("Male"),
+                          
+                  //           value: user.male,
+                  //           groupValue: _gender,
+                  //           onChanged: (user? value) {
+                  //             setState(() {
+                  //               _gender = value;
+                  //             });
+                  //           },
+                          
+                  //       ),
+                  //     ),
+                  //     Container(
+                  //       height: 10,
+                  //       child: RadioListTile<user>(
+                  //         tileColor: Colors.white,
+                  //         title: const Text("Others"),
+                          
+                  //           value: user.other,
+                  //           groupValue: _gender,
+                  //           onChanged: (user? value) {
+                  //             setState(() {
+                  //               _gender = value;
+                  //             });
+                  //           },
+                          
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+                      
                   SizedBox(height: 15),
                   TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      filled:true,
+                      filled: true,
                       fillColor: Colors.white,
                       labelText: ("Enter a password:"),
                       enabledBorder: OutlineInputBorder(
@@ -154,12 +205,13 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5,),
-
+                  SizedBox(
+                    height: 5,
+                  ),
                   TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      filled:true,
+                      filled: true,
                       fillColor: Colors.white,
                       labelText: ("Re-enter the password:"),
                       enabledBorder: OutlineInputBorder(
@@ -171,9 +223,9 @@ class _RegisterState extends State<Register> {
                 ],
               ),
             ),
-            
           ],
         ),
-        );
+      ),
+    );
   }
 }
