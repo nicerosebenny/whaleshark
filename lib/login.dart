@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whaleshark/register.dart';
+import 'package:whaleshark/report.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -34,10 +34,20 @@ class _LoginState extends State<Login> {
 
           ) ,
         ),
-        MaterialButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const Register(),),);}
+        const SizedBox(height: 70,),
+        MaterialButton(
+          color: Colors.white,height: 50,textColor:Colors.black,
+          child: const Text("Login"),
+          
+          onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const Report(),),);}
         
-        ),]
+        ),
+        const SizedBox(height:20),
+        const Text("Forgot  Password?",style:TextStyle(color:Colors.black),),
+        SizedBox(height: 40,),
+        Text("Dont have an account?Sign Up",style:TextStyle(color:Colors.black),)]
+        
         
       
         )

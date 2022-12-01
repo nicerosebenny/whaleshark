@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 
 
@@ -94,11 +96,11 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Row(
-                  children:[Text("Choose Gender:",style: TextStyle(fontSize: 16),),
+                  children:[const Text("Choose Gender:",style: TextStyle(fontSize: 16),),
                   ListTile(
                     tileColor: Colors.white,
                     title: const Text("Female"),
@@ -140,10 +142,10 @@ class _RegisterState extends State<Register> {
                   ),
                   ],
                   ),
-                  SizedBox(height: 15),
-                  TextField(
-                    style: TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
+                  const SizedBox(height: 15),
+                  const TextField(
+                    style: const TextStyle(color: Colors.black),
+                    decoration: const InputDecoration(
                       filled:true,
                       fillColor: Colors.white,
                       labelText: ("Enter a password:"),
@@ -153,17 +155,17 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5,),
+                  const SizedBox(height: 5,),
 
-                  TextField(
+                  const TextField(
                     style: TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       filled:true,
                       fillColor: Colors.white,
                       labelText: ("Re-enter the password:"),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
-                            BorderSide(width: 1.5, color: Colors.lightBlue),
+                            const BorderSide(width: 1.5, color: Colors.lightBlue),
                       ),
                     ),
                   ),
