@@ -21,6 +21,7 @@ class _RegisterState extends State<Register> {
     return Scaffold(
        backgroundColor: Colors.lightBlue.shade200,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         title: const Text("Registration",style: TextStyle(color: Colors.blue),),
       ),
@@ -33,6 +34,7 @@ class _RegisterState extends State<Register> {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: Column(
                 children: [
+                  SizedBox(height: 12,),
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -45,7 +47,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 12,),
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -58,7 +60,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 12,),
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -71,7 +73,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 12,),
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -84,7 +86,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 5),
+                  SizedBox(height: 12,),
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
@@ -98,7 +100,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
+                    height: 12,
                   ),
                   Column(
                     children: [
@@ -109,7 +111,7 @@ class _RegisterState extends State<Register> {
                       Row(
                         
                         children: [
-                           SizedBox(height: 20,),
+                           SizedBox(height: 30,),
                           Container(
                         
                         height: 10,
@@ -125,7 +127,7 @@ class _RegisterState extends State<Register> {
                         ),
                       ),Text("Female"),
                             SizedBox(
-                            height: 20,
+                            height: 30,
                               ),
                         
                         ],
@@ -133,7 +135,7 @@ class _RegisterState extends State<Register> {
                       Row(
                       children:[
                         
-                      SizedBox(height: 20),
+                      SizedBox(height: 30),
                       Container(
                         height: 10,
                         child: Radio<user>(
@@ -149,13 +151,13 @@ class _RegisterState extends State<Register> {
                       ),
                       Text("Male"),
                             SizedBox(
-                            height: 20,
+                            height: 30,
                               ),
                       ],
                       ),
                       Row(
                         children:[
-                        SizedBox(height: 20),  
+                        SizedBox(height: 30),  
                       Container(
                         height: 10,
                         child: Radio<user>(
@@ -171,7 +173,7 @@ class _RegisterState extends State<Register> {
                       ),
                       Text("Others"),
                             SizedBox(
-                            height: 20,
+                            height: 30,
                               ),],
                       ),
                     ],
@@ -241,7 +243,7 @@ class _RegisterState extends State<Register> {
                     ),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 12,
                   ),
                   TextField(
                     style: TextStyle(color: Colors.black),
