@@ -100,56 +100,6 @@ class _RegisterState extends State<Register> {
                   const SizedBox(
                     height: 5,
                   ),
-<<<<<<< HEAD
-                  Row(
-                  children:[const Text("Choose Gender:",style: TextStyle(fontSize: 16),),
-                  ListTile(
-                    tileColor: Colors.white,
-                    title: const Text("Female"),
-                    leading: Radio(
-                      value: user.female,
-                      groupValue: _gender,
-                      onChanged: (user? value) {
-                        setState(() {
-                          _gender = value;
-                        });
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    tileColor: Colors.white,
-                    title: const Text("Male"),
-                    leading: Radio(
-                      value: user.male,
-                      groupValue: _gender,
-                      onChanged: (user? value) {
-                        setState(() {
-                          _gender = value;
-                        });
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    tileColor: Colors.white,
-                    title: const Text("Others"),
-                    leading: Radio(
-                      value: user.other,
-                      groupValue: _gender,
-                      onChanged: (user? value) {
-                        setState(() {
-                          _gender = value;
-                        });
-                      },
-                    ),
-                  ),
-                  ],
-                  ),
-                  const SizedBox(height: 15),
-                  const TextField(
-                    style: const TextStyle(color: Colors.black),
-                    decoration: const InputDecoration(
-                      filled:true,
-=======
                   Column(
                     children: [
                       Text(
@@ -282,7 +232,6 @@ class _RegisterState extends State<Register> {
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       filled: true,
->>>>>>> 7a6dc65c242bf3a7a63bc23369e82159b459a3af
                       fillColor: Colors.white,
                       labelText: ("Enter a password:"),
                       enabledBorder: OutlineInputBorder(
@@ -291,14 +240,6 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
-<<<<<<< HEAD
-                  const SizedBox(height: 5,),
-
-                  const TextField(
-                    style: TextStyle(color: Colors.black),
-                    decoration: const InputDecoration(
-                      filled:true,
-=======
                   SizedBox(
                     height: 5,
                   ),
@@ -306,7 +247,6 @@ class _RegisterState extends State<Register> {
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
                       filled: true,
->>>>>>> 7a6dc65c242bf3a7a63bc23369e82159b459a3af
                       fillColor: Colors.white,
                       labelText: ("Re-enter the password:"),
                       enabledBorder: OutlineInputBorder(
