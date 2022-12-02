@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: unnecessary_const
 
+import 'package:flutter/material.dart';
+import 'package:whaleshark/login.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -17,12 +19,13 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue.shade200,
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
-          title: const Text("Registration"),
-        ),
-        body: Column(
+       backgroundColor: Colors.lightBlue.shade200,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text("Registration",style: TextStyle(color: Colors.blue),),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 5),
@@ -33,6 +36,8 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
                       labelText: ("Name:"),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
@@ -44,6 +49,8 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
                       labelText: ("Phone Number:"),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
@@ -55,6 +62,8 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
                       labelText: ("E-mail id:"),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
@@ -66,6 +75,8 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
                       labelText: ("Address:"),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
@@ -77,6 +88,8 @@ class _RegisterState extends State<Register> {
                   const TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
                       labelText: ("Date Of Birth:"),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
@@ -84,60 +97,247 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                   ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+<<<<<<< HEAD
+                  Row(
+                  children:[const Text("Choose Gender:",style: TextStyle(fontSize: 16),),
                   ListTile(
-                    tileColor: Colors.lightBlue,
+                    tileColor: Colors.white,
                     title: const Text("Female"),
                     leading: Radio(
                       value: user.female,
                       groupValue: _gender,
-                      onChanged: (value) {
+                      onChanged: (user? value) {
                         setState(() {
-                          // _gender = value;
+                          _gender = value;
                         });
                       },
                     ),
                   ),
                   ListTile(
-                    tileColor: Colors.lightBlue,
+                    tileColor: Colors.white,
                     title: const Text("Male"),
                     leading: Radio(
                       value: user.male,
                       groupValue: _gender,
-                      onChanged: (value) {
+                      onChanged: (user? value) {
                         setState(() {
-                          // _gender = value;
+                          _gender = value;
                         });
                       },
                     ),
                   ),
                   ListTile(
-                    tileColor: Colors.lightBlue,
+                    tileColor: Colors.white,
                     title: const Text("Others"),
                     leading: Radio(
                       value: user.other,
                       groupValue: _gender,
-                      onChanged: (value) {
+                      onChanged: (user? value) {
                         setState(() {
-                          // _gender = value;
+                          _gender = value;
                         });
                       },
                     ),
                   ),
+                  ],
+                  ),
                   const SizedBox(height: 15),
                   const TextField(
+                    style: const TextStyle(color: Colors.black),
+                    decoration: const InputDecoration(
+                      filled:true,
+=======
+                  Column(
+                    children: [
+                      Text(
+                        "Choose Gender:",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Row(
+                        
+                        children: [
+                           SizedBox(height: 20,),
+                          Container(
+                        
+                        height: 10,
+                        child: Radio<user>(
+                          value: user.female,
+                          groupValue: _gender,
+                          onChanged: (user? value) {
+                            setState(() {
+                              _gender = value;
+                              print(value);
+                            });
+                          },
+                        ),
+                      ),Text("Female"),
+                            SizedBox(
+                            height: 20,
+                              ),
+                        
+                        ],
+                      ),
+                      Row(
+                      children:[
+                        
+                      SizedBox(height: 20),
+                      Container(
+                        height: 10,
+                        child: Radio<user>(
+                          value: user.male,
+                          groupValue: _gender,
+                          onChanged: (user? value) {
+                            setState(() {
+                              _gender = value;
+                              print(value);
+                            });
+                          },
+                        ),
+                      ),
+                      Text("Male"),
+                            SizedBox(
+                            height: 20,
+                              ),
+                      ],
+                      ),
+                      Row(
+                        children:[
+                        SizedBox(height: 20),  
+                      Container(
+                        height: 10,
+                        child: Radio<user>(
+                          value: user.other,
+                          groupValue: _gender,
+                          onChanged: (user? value) {
+                            setState(() {
+                              _gender = value;
+                              print(value);
+                            });
+                          },
+                        ),
+                      ),
+                      Text("Others"),
+                            SizedBox(
+                            height: 20,
+                              ),],
+                      ),
+                    ],
+                  ),
+                  
+                  
+                  //       child: RadioListTile<user>(
+                  //         tileColor: Colors.white,
+                  //         title: const Text("Female"),
+
+                  //           value: user.female,
+                  //           groupValue: _gender,
+                  //           onChanged: (user? value) {
+                  //             setState(() {
+                  //               _gender = value;
+                  //             });
+                  //           },
+
+                  //       ),
+                  //     ),
+                  //     Container(
+                  //       height: 10,
+                  //       child: RadioListTile<user>(
+                  //         tileColor: Colors.white,
+                  //         title: const Text("Male"),
+
+                  //           value: user.male,
+                  //           groupValue: _gender,
+                  //           onChanged: (user? value) {
+                  //             setState(() {
+                  //               _gender = value;
+                  //             });
+                  //           },
+
+                  //       ),
+                  //     ),
+                  //     Container(
+                  //       height: 10,
+                  //       child: RadioListTile<user>(
+                  //         tileColor: Colors.white,
+                  //         title: const Text("Others"),
+
+                  //           value: user.other,
+                  //           groupValue: _gender,
+                  //           onChanged: (user? value) {
+                  //             setState(() {
+                  //               _gender = value;
+                  //             });
+                  //           },
+
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+
+                  SizedBox(height: 15),
+                  TextField(
                     style: TextStyle(color: Colors.black),
                     decoration: InputDecoration(
-                      labelText: ("Enter password:"),
+                      filled: true,
+>>>>>>> 7a6dc65c242bf3a7a63bc23369e82159b459a3af
+                      fillColor: Colors.white,
+                      labelText: ("Enter a password:"),
                       enabledBorder: OutlineInputBorder(
                         borderSide:
                             BorderSide(width: 1.5, color: Colors.lightBlue),
                       ),
                     ),
-                  )
+                  ),
+<<<<<<< HEAD
+                  const SizedBox(height: 5,),
+
+                  const TextField(
+                    style: TextStyle(color: Colors.black),
+                    decoration: const InputDecoration(
+                      filled:true,
+=======
+                  SizedBox(
+                    height: 5,
+                  ),
+                  TextField(
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      filled: true,
+>>>>>>> 7a6dc65c242bf3a7a63bc23369e82159b459a3af
+                      fillColor: Colors.white,
+                      labelText: ("Re-enter the password:"),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            const BorderSide(width: 1.5, color: Colors.lightBlue),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  MaterialButton(
+                      color: Colors.white,
+                      height: 40,
+                      minWidth: 90,
+                      textColor: Colors.black,
+                      child: Text("Sumbit"),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Login(),
+                          ),
+                        );
+                      })
                 ],
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
