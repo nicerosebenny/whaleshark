@@ -10,7 +10,7 @@ class Siguppage extends Bloc<LoginEvents, LoginStates> {
 
   Future<FutureOr<void>> verifyPassword(
       VerifyPassword event, Emitter<LoginStates> emit) async {
-    Signupmodel signupmodel;
+    SignupModel signupmodel;
     emit(Loading());
 
     Map map = {

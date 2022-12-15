@@ -17,7 +17,7 @@ class Repository {
     final LoginModel userModel = LoginModel.fromJson(response);
     return userModel;
   }
-  Future<Signupmodel> signup2(
+  Future<SignupModel> signup2(
       {required String url, dynamic data}) async {
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.none) {
@@ -27,7 +27,7 @@ class Repository {
       );
     }
     final dynamic response = await WebClient.post(url, data);
-    final Signupmodel userModel = Signupmodel.fromJson(response);
+    final SignupModel userModel = SignupModel.fromJson(response);
     return userModel;
   }
   Future<LoginModel> signup({required String url, dynamic data}) async {
