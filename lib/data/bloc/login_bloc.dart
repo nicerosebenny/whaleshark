@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:whaleshark/data/model/loginmodel.dart';
 import 'package:whaleshark/data/model/registermodel.dart';
 import 'package:whaleshark/reprositries/reprositries.dart';
 
@@ -10,15 +11,15 @@ class LoginBloc extends Bloc<LoginEvents, LoginStates> {
 
   Future<FutureOr<void>> verifyPassword(
       VerifyPassword event, Emitter<LoginStates> emit) async {
-    Signupmodel loginModel;
+    LoginModel loginModel;
     emit(Loading());
 
     Map map = {
-      "phone": event.username,
+      "phone": event,
       "password": event.password,
     };
     loginModel =
-        (await Repository().checkPhoneNumber(url: "user/login", data: map)) as Signupmodel;
+        (await Repository().checkPhoneNumber(url: "/login", data: map)) as LoginModel;
 
     if (loginModel.status == true) {
       emit(LoginSuccess());

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whaleshark/Innet.dart';
 import 'package:whaleshark/login.dart';
 import 'package:whaleshark/naturalwater.dart';
 import 'package:whaleshark/register.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Login(),
+      home: const Innet(),
     );
   }
 }
