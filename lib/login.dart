@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whaleshark/register.dart';
 import 'package:whaleshark/report.dart';
 
 class Login extends StatefulWidget {
@@ -45,8 +46,35 @@ class _LoginState extends State<Login> {
         ),
         const SizedBox(height:20),
         const Text("Forgot  Password?",style:TextStyle(color:Colors.black),),
+        // ignore: prefer_const_constructors
         SizedBox(height: 40,),
-        Text("Dont have an account?Sign Up",style:TextStyle(color:Colors.black),)]
+        Row(
+          children: [
+            SizedBox(width: 50,),
+            Container(
+             child: const Text("Dont have an account?",style:TextStyle(color:Colors.black),),
+            
+            ),
+
+            InkWell(child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("SignUp",style:TextStyle(color:Colors.black,   decoration: TextDecoration.underline,),),
+            ),
+            onTap: (){
+
+              Navigator.push(context,MaterialPageRoute(builder:(context)=> const Register(),));
+
+              
+            },
+            
+            
+            
+            ),
+            
+            
+            
+          ],
+        )]
         
         
       
