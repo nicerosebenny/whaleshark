@@ -169,34 +169,34 @@ class _NaturalwaterState extends State<Naturalwater> {
               ),
             ),
                    ),
-files.isEmpty
-              ? const SizedBox.shrink()
-              : SizedBox(
-                  height: MediaQuery.of(context).size.height / 5,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: files.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return InkWell(
-                          child: Row(
-                            children: [
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              ClipRRect(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  child: Image.file(
-                                    files[index],
-                                    height: 150,
-                                    width: 80,
-                                    fit: BoxFit.contain,
-                                  )),
-                            ],
-                          ),
-                          onTap: () async {});
-                    },
-                  ),
-                ),
+// files.isEmpty
+//               ? const SizedBox.shrink()
+//               : SizedBox(
+//                   height: MediaQuery.of(context).size.height / 5,
+//                   child: ListView.builder(
+//                     scrollDirection: Axis.horizontal,
+//                     itemCount: files.length,
+//                     itemBuilder: (BuildContext context, int index) {
+//                       return InkWell(
+//                           child: Row(
+//                             children: [
+//                               const SizedBox(
+//                                 width: 10,
+//                               ),
+//                               // ClipRRect(
+//                               //     borderRadius: BorderRadius.circular(10.0),
+//                               //     child: Image.file(
+//                               //       files[index],
+//                               //       height: 150,
+//                               //       width: 80,
+//                               //       fit: BoxFit.contain,
+//                               //     )),
+//                             ],
+//                           ),
+//                           onTap: () async {});
+//                     },
+//                   ),
+//                 ),
               //      Container(
               //       child:Text("Choose data:"),
               //      files.isEmpty
@@ -268,19 +268,19 @@ files.isEmpty
       maxHeight: 1800,
     );
 
-    if (pickedFile != null) {
-      var dir = await getTemporaryDirectory();
+    // if (pickedFile != null) {
+    //   var dir = await getTemporaryDirectory();
 
-      var cfile = await compressFile(File(pickedFile.path));
+    //   var cfile = await compressFile(File(pickedFile.path));
 
-      File image = await File('${dir.path}/${pickedFile.path.split('/').last}')
-          .writeAsBytes(cfile!);
-      imageFile = image;
-      files.add(imageFile!);
-      imagepath = image.path;
+    //   File image = await File('${dir.path}/${pickedFile.path.split('/').last}')
+    //       .writeAsBytes(cfile!);
+    //   imageFile = image;
+    //   files.add(imageFile!);
+    //   imagepath = image.path;
 
-      setState(() {});
-    }
+    //   setState(() {});
+    // }
 
     // files.add(File(image!.path));
     // setState(() {});
