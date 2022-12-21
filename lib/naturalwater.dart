@@ -1,6 +1,12 @@
+
+
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:whaleshark/login.dart';
 
 class Naturalwater extends StatefulWidget {
   const Naturalwater({super.key});
@@ -11,6 +17,7 @@ class Naturalwater extends StatefulWidget {
 enum fish { femalefish, malefish, dontknow }
 class _NaturalwaterState extends State<Naturalwater> {
   fish? _fishgender = fish.dontknow;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,11 +169,131 @@ class _NaturalwaterState extends State<Naturalwater> {
               ),
             ),
                    ),
+files.isEmpty
+              ? const SizedBox.shrink()
+              : SizedBox(
+                  height: MediaQuery.of(context).size.height / 5,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: files.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return InkWell(
+                          child: Row(
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  child: Image.file(
+                                    files[index],
+                                    height: 150,
+                                    width: 80,
+                                    fit: BoxFit.contain,
+                                  )),
+                            ],
+                          ),
+                          onTap: () async {});
+                    },
+                  ),
+                ),
+              //      Container(
+              //       child:Text("Choose data:"),
+              //      files.isEmpty
+              // ? const SizedBox.shrink()
+              // : SizedBox(
+              //     height: MediaQuery.of(context).size.height / 5,
+              //     child: ListView.builder(
+              //       scrollDirection: Axis.horizontal,
+              //       itemCount: files.length,
+              //       itemBuilder: (BuildContext context, int index) {
+              //         return InkWell(
+              //             child: Row(
+              //               children: [
+              //                 const SizedBox(
+              //                   width: 10,
+              //                 ),
+              //                 ClipRRect(
+              //                     borderRadius: BorderRadius.circular(10.0),
+              //                     child: Image.file(
+              //                       files[index],
+              //                       height: 150,
+              //                       width: 80,
+              //                       fit: BoxFit.contain,
+              //                     )),
+              //               ],
+              //             ),
+              //             onTap: () async {});
+              //       },
+              //     ),
+              //   ),
+              //      ),
                    
+
+
+                   SizedBox(height: 20,),
+            Row(
+              children: [
+                SizedBox(width: 150,),
+                MaterialButton(
+                          color: Colors.white,
+                          height: 40,
+                          minWidth: 90,
+                          textColor: Colors.black,
+                          child: Text("Sumbit"),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Login(),
+                              ),
+                            );
+                          }),
+              ],
+            )      
           ],
         ),
       )
       ), 
     );
   }
+
+  File? imageFile;
+  File? videoFile;
+
+  void _imgFromCamera() async {
+    var pickedFile = await ImagePicker().pickImage(
+      source: ImageSource.camera,
+      maxWidth: 1800,
+      maxHeight: 1800,
+    );
+
+    if (pickedFile != null) {
+      var dir = await getTemporaryDirectory();
+
+      var cfile = await compressFile(File(pickedFile.path));
+
+      File image = await File('${dir.path}/${pickedFile.path.split('/').last}')
+          .writeAsBytes(cfile!);
+      imageFile = image;
+      files.add(imageFile!);
+      imagepath = image.path;
+
+      setState(() {});
+    }
+
+    // files.add(File(image!.path));
+    // setState(() {});
+    // imagepath = image.path;
+
+    //_cropImage(image!.path);
+  }
+
+
+
+
+
+
+
+
 }

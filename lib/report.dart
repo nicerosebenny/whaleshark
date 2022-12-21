@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whaleshark/login.dart';
+import 'package:whaleshark/naturalwater.dart';
 class Report extends StatefulWidget {
   const Report({Key? key}) : super(key: key);
 
@@ -109,7 +110,9 @@ class _ReportState extends State<Report> {
                             style: TextStyle(color: Colors.white),
                           ),
                           color: Colors.black,
-                          onPressed: () {}),
+                          onPressed: () {
+                             
+                          }),
                       SizedBox(
                         height: 10,
                       ),
@@ -121,7 +124,7 @@ class _ReportState extends State<Report> {
                         color: Colors.black,
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Login()));
+                              MaterialPageRoute(builder: (context) => Naturalwater()));
                         },
                       )
                     ],

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:whaleshark/data/bloc/signupbloc.dart';
-import 'package:whaleshark/login.dart';
-import 'package:whaleshark/naturalwater.dart';
-import 'package:whaleshark/register.dart';
 
+import 'package:whaleshark/data/bloc/signupbloc.dart';
+
+import 'package:whaleshark/register.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -26,7 +25,10 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: const Register(),
+    // home: const Innet(),
+        
       ),
+  
     );
   }
 }
