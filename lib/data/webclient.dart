@@ -1,13 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
+
 ///1
 import '../utilities/prefManager.dart';
 
 class WebClient {
   //static const baseUrl = "https://192.168.55.2:6000/";
 
-   static const baseUrl = "https://parishprojects.herokuapp.com/";
+  static const baseUrl = "http://192.168.52.162:4006/";
 
   static const imageUrl = "https://parishprojects.herokuapp.com/file/get/";
 

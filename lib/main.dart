@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:whaleshark/data/bloc/signupbloc.dart';
 import 'package:whaleshark/login.dart';
 import 'package:whaleshark/naturalwater.dart';
 import 'package:whaleshark/register.dart';
@@ -13,13 +15,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<SignupBloc>(create: (context) => SignupBloc()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const Register(),
       ),
-      home: const Login(),
     );
   }
 }
@@ -52,7 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -69,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
-        ),
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

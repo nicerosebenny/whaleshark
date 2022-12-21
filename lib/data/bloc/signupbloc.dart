@@ -3,55 +3,59 @@ import 'package:whaleshark/data/model/registermodel.dart';
 import 'package:whaleshark/reprositries/reprositries.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Siguppage extends Bloc<LoginEvents, LoginStates> {
-  Siguppage() : super(LoginInitial()) {
-    on<VerifyPassword>(verifyPassword);
+class SignupBloc extends Bloc<SignupEvents, SignupStates> {
+  SignupBloc() : super(LoginInitial()) {
+    on<GetSignupEvent>(_getSignupEvent);
   }
 
-  Future<FutureOr<void>> verifyPassword(
-      VerifyPassword event, Emitter<LoginStates> emit) async {
+  Future<FutureOr<void>> _getSignupEvent(
+      GetSignupEvent event, Emitter<SignupStates> emit) async {
     SignupModel signupmodel;
     emit(Loading());
 
     Map map = {
-      "role": event.role,
-      "phone number": event.phone,
-      "password":event.password
+      "role": "",
+      "name": event.name,
+      "phone":event.phone,
+       "address":"",
+        "password":event.password,
+        "email":event.email,
+
     };
     signupmodel =
         (await Repository().signup2(url: "/user/registration", data: map));
 
     if (signupmodel.status == true) {
-      emit(LoginSuccess());
+      emit(SignupSuccess());
     } else {
-      emit(LoginError(error: signupmodel.msg));
+      emit(SignupError(error: signupmodel.msg));
     }
-     if (event.role == "housekeeper" && event.phone == "7308518671" && event.password=="123") {
-       emit(LoginSuccess());
-     } else {
-       emit(LoginError(error: "Invalid credentials"));
-     }
+    //  if (event.role == "housekeeper" && event.phone == "7308518671" && event.password=="123") {
+    //    emit(SignupSuccess());
+    //  } else {
+    //    emit(SignupError(error: "Invalid credentials"));
+    //  }
   }
 }
 
-class LoginEvents {}
+class SignupEvents {}
 
-class VerifyPassword extends LoginEvents {
-  final String? role, phone,password;
+class GetSignupEvent extends SignupEvents {
+  final String? role, phone,password,name,email;
 
-  VerifyPassword({this.role, this.phone, this.password});
+  GetSignupEvent({this.role, this.phone, this.password,this.email,this.name});
 }
 
-class LoginStates {}
+class SignupStates {}
 
-class LoginInitial extends LoginStates {}
+class LoginInitial extends SignupStates {}
 
-class Loading extends LoginStates {}
+class Loading extends SignupStates {}
 
-class LoginSuccess extends LoginStates {}
+class SignupSuccess extends SignupStates {}
 
-class LoginError extends LoginStates {
+class SignupError extends SignupStates {
   final String? error;
 
-  LoginError({this.error});
+  SignupError({this.error});
 }

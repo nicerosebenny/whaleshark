@@ -15,8 +15,11 @@ class LoginBloc extends Bloc<LoginEvents, LoginStates> {
     emit(Loading());
 
     Map map = {
+
       "phone": event,
       "password": event.password,
+    
+
     };
     loginModel =
         (await Repository().checkPhoneNumber(url: "/login", data: map)) as LoginModel;
